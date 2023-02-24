@@ -1,28 +1,28 @@
-import React from 'react';
+import React from 'react'
 
 const Banner = ({ isLoading, ipInfo }) => {
   return (
-    <div className="absolute left-0 right-0 banner-index flex flex-col w-11/12 m-auto gap-3 justify-center bg-white py-6 rounded text-center xl:flex-row xl:py-7 ">
+    <div className="absolute left-0 right-0 flex flex-col justify-center w-11/12 gap-3 py-6 m-auto text-center bg-white rounded banner-index xl:flex-row xl:py-7 ">
       {isLoading ? (
         <p className="text-center">Loading</p>
       ) : (
         <>
           <div className="flex flex-col items-center justify-center xl:gap-1 xl:flex-row">
-            <small className="text-gray-400 font-medium uppercase">
+            <small className="font-medium text-gray-400 uppercase">
               ip address:
             </small>
             <p className="font-medium capitalize">{ipInfo?.ip}</p>
           </div>
           <div className="flex flex-col items-center justify-center xl:gap-1 xl:flex-row info-border">
-            <small className="text-gray-400 font-medium uppercase">
+            <small className="font-medium text-gray-400 uppercase">
               location:
             </small>
             <p className="font-medium capitalize">
-              {ipInfo?.location.city}, {ipInfo?.location.region}
+              {ipInfo?.location?.city}, {ipInfo?.location?.region}
             </p>
           </div>
           <div className="flex flex-col items-center justify-center xl:gap-1 xl:flex-row info-border">
-            <small className="text-gray-400 font-medium uppercase">
+            <small className="font-medium text-gray-400 uppercase">
               timezone:
             </small>
             <p className="font-medium capitalize">
@@ -30,13 +30,13 @@ const Banner = ({ isLoading, ipInfo }) => {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center xl:gap-1 xl:flex-row info-border">
-            <small className="text-gray-400 font-medium uppercase">isp: </small>
+            <small className="font-medium text-gray-400 uppercase">isp: </small>
             <p className="font-medium capitalize">{ipInfo?.isp}</p>
           </div>
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

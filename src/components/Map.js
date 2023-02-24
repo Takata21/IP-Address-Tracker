@@ -1,7 +1,7 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import Spinner from './Spinner';
+import React from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+import Spinner from './Spinner'
 const Map = ({ isLoading, coordinates, ipInfo }) => {
   return (
     <div className="map-h">
@@ -11,7 +11,7 @@ const Map = ({ isLoading, coordinates, ipInfo }) => {
         <MapContainer
           center={coordinates}
           zoom={13}
-          className="map-h overflow-hidden"
+          className="overflow-hidden map-h"
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -19,14 +19,14 @@ const Map = ({ isLoading, coordinates, ipInfo }) => {
           />
           <Marker position={coordinates}>
             <Popup>
-              {ipInfo?.location.city}, <br />
-              {ipInfo?.location.region}
+              {ipInfo?.location?.city}, <br />
+              {ipInfo?.location?.region}
             </Popup>
           </Marker>
         </MapContainer>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Map;
+export default Map
